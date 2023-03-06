@@ -57,22 +57,31 @@ void cacluteprogress() async {
   await  caculateTasks();
 
 
- 
+double multi=0.0;
+double substact=0.0;
+double result=0.0;
+
+
+
 
 if(Get.find<TaskAndPRojBox>().taskList.isNotEmpty){
 
 for (var i = 0; i < Get.find<TaskAndPRojBox>().projList.length; i++) {
+  print(i.toString());
   
-      for (var k = 0; k < Get.find<TaskAndPRojBox>().taskList.length; k++) {
+      // for (var k = 0; k < Get.find<TaskAndPRojBox>().taskList.length; k++) {
         
          
-        if (Get.find<TaskAndPRojBox>().projList[i].tasks[i] ==
-                Get.find<TaskAndPRojBox>().taskList[k].title &&
-            Get.find<TaskAndPRojBox>().taskList[k].status == true) {
-              Get.find<TaskAndPRojBox>().projList[i].tasks.remove(Get.find<TaskAndPRojBox>().taskList[k].title);
+      //   if (Get.find<TaskAndPRojBox>().projList[i].tasks[i] ==
+      //           Get.find<TaskAndPRojBox>().taskList[k].title &&
+      //       Get.find<TaskAndPRojBox>().taskList[k].status == true) {
+              
+      //         Get.find<TaskAndPRojBox>().projList[i].tasks.remove(Get.find<TaskAndPRojBox>().taskList[k].title);
+
+
              
-            }
-      }
+      //       }
+      // }
     
   }
 }
