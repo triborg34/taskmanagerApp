@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:taskmannager/controller/controller.dart';
 
 class HelloTextWidget extends StatelessWidget {
   const HelloTextWidget({
@@ -14,7 +16,7 @@ class HelloTextWidget extends StatelessWidget {
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
         ),
         Text(
-          "0 کار مانده...",
+          "${Get.find<TaskAndPRojBox>().taskList.length} کار مانده...",
           textDirection: TextDirection.rtl,
           style: TextStyle(
               color: Color.fromARGB(255, 105, 105, 105),
