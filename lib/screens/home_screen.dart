@@ -8,6 +8,7 @@ import 'package:taskmannager/widgets/ListView.dart';
 import 'package:taskmannager/widgets/MyListTilew.dart';
 import 'package:taskmannager/widgets/RowText.dart';
 import 'package:taskmannager/widgets/Searchbar.dart';
+import 'package:taskmannager/widgets/empty.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -52,7 +53,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     SizedBox(
                       height: 10,
                     ),
-                    MyCardWidget(),
+                    GetBuilder<TaskAndPRojBox>(builder: (controller){
+                       if(Get.find<TaskAndPRojBox>().projList.isNotEmpty){
+                        return MyCardWidget();
+
+                       }else{
+                        return Empty('assets/images/empty1.png');
+                       }
+                    }),
                     SizedBox(
                       height: 15,
                     ),
@@ -60,10 +68,18 @@ class _HomeScreenState extends State<HomeScreen> {
                     SizedBox(
                       height: 10,
                     ),
-                    for (var i = 0;
-                        i < Get.find<TaskAndPRojBox>().taskList.length;
-                        i++)
-                       MyListTileWidget(i: i)
+                      GetBuilder<TaskAndPRojBox>(builder: (controller){
+                       if(Get.find<TaskAndPRojBox>().taskList.isNotEmpty){
+                        return _MyListTileFunc();
+
+                       }else{
+                        return Empty('assets/images/empty2.png');
+                       }
+                    }),
+
+
+                  
+                             
                   ],
                 );
                 },)
@@ -73,4 +89,11 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
+}
+
+
+_MyListTileFunc(){
+    for (var i = 0;
+                        i < Get.find<TaskAndPRojBox>().taskList.length;
+                        i++)  return MyListTileWidget(i: i);
 }
