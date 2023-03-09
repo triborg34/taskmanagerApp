@@ -5,6 +5,7 @@ import 'package:taskmannager/consts.dart';
 import 'package:taskmannager/controller/controller.dart';
 import 'package:taskmannager/models/taskModel.dart';
 import 'package:taskmannager/screens/newtask_screen.dart';
+import 'package:taskmannager/utils/maths.dart';
 
 class MyListTileWidget extends StatelessWidget {
   MyListTileWidget({
@@ -68,6 +69,7 @@ class MyListTileWidget extends StatelessWidget {
                                       status: Get.find<TaskAndPRojBox>()
                                           .taskList[i]
                                           .status));
+                                          cacluteprogress();
                                           Get.find<TaskAndPRojBox>().update([5]);
                                           Navigator.pop(context);
                             },
