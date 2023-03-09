@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:taskmannager/consts.dart';
 import 'package:taskmannager/controller/controller.dart';
+import 'package:taskmannager/screens/search_screen.dart';
 
 class SearchBar extends StatelessWidget {
   
@@ -38,6 +39,7 @@ class SearchBar extends StatelessWidget {
                   searchlist.add(text);
                 }
               }
+              Get.to(()=> SearchScreen(showList: searchlist,text: text,));
               
             },
             cursorColor: Colors.lightGreen,
