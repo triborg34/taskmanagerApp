@@ -38,6 +38,7 @@ class MyApp extends StatelessWidget {
         Get.find<TaskAndPRojBox>().getCatData();
         Get.find<TaskAndPRojBox>().getProjData();
         remindTimes();
+        
       },
       debugShowCheckedModeBanner: false,
       initialBinding: MyBindigs(),

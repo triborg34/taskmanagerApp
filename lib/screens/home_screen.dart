@@ -20,7 +20,6 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-  
     return SafeArea(
       child: Scaffold(
         body: Container(
@@ -28,65 +27,60 @@ class _HomeScreenState extends State<HomeScreen> {
           height: ScreenSize(context).screenHeight,
           child: Padding(
               child: SingleChildScrollView(
-                child: GetBuilder<TaskAndPRojBox>(id: 5,builder: (controller) {
+                  child: GetBuilder<TaskAndPRojBox>(
+                id: 5,
+                builder: (controller) {
                   return Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        CircleAvatar(
-                          backgroundColor: Colors.lightGreen,
-                          radius: 25,
-                        ),
-                        Spacer(),
-                        HelloTextWidget(),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    SearchBar(),
-                    SizedBox(
-                      height: 25,
-                    ),
-                    RowTexts(name: 'پروژه ها'),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    GetBuilder<TaskAndPRojBox>(builder: (controller){
-                       if(Get.find<TaskAndPRojBox>().projList.isNotEmpty){
-                        return MyCardWidget();
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          CircleAvatar(
+                            backgroundColor: Colors.lightGreen,
+                            radius: 25,
+                          ),
+                          Spacer(),
+                          HelloTextWidget(),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      SearchBar(),
+                      SizedBox(
+                        height: 25,
+                      ),
+                      RowTexts(name: 'پروژه ها'),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      GetBuilder<TaskAndPRojBox>(builder: (controller) {
+                        if (Get.find<TaskAndPRojBox>().projList.isNotEmpty) {
+                          return MyCardWidget();
+                        } else {
+                          return Empty('assets/images/empty1.png');
+                        }
+                      }),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      RowTexts(name: 'کار های روزانه'),
+                      SizedBox(
+                        height: 10,
+                      ),
 
-                       }else{
-                        return Empty('assets/images/empty1.png');
-                       }
-                    }),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    RowTexts(name: 'کار های روزانه'),
-                    SizedBox(
-                      height: 10,
-                    ),
-                     for (var i = 0;
-                        i < Get.find<TaskAndPRojBox>().taskList.length;
-                        i++)   MyListTileWidget(i: i)
-                    //   GetBuilder<TaskAndPRojBox>(builder: (controller){
-                    //    if(Get.find<TaskAndPRojBox>().taskList.isNotEmpty){
-                    //     return SingleChildScrollView(child:_MyListTileFunc() ,);
+                      if (Get.find<TaskAndPRojBox>().taskList.isNotEmpty)
+                        for (var i = 0;
+                            i < Get.find<TaskAndPRojBox>().taskList.length;
+                            i++)
+                          MyListTileWidget(i: i)
+                      else Empty('assets/images/empty2.png')
 
-                    //    }else{
-                    //     return Empty('assets/images/empty2.png');
-                    //    }
-                    // }),
-
-
-                  
-                             
-                  ],
-                );
-                },)
-              ),
+               
+                    ],
+                  );
+                },
+              )),
               padding: EdgeInsets.symmetric(horizontal: 30, vertical: 40)),
         ),
       ),
@@ -94,7 +88,4 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-
-_MyListTileFunc(){
-   
-}
+_MyListTileFunc() {}
