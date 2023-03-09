@@ -70,11 +70,7 @@ if(Get.find<TaskAndPRojBox>().taskList.isNotEmpty){
 
 for (var i = 0; i < Get.find<TaskAndPRojBox>().projList.length; i++) {
   
-  for(int k=0;k<Get.find<TaskAndPRojBox>().taskList.length;k++){
-
-    
-    
-    
+  for(int k=0;k<Get.find<TaskAndPRojBox>().taskList.length;k++){  
     if(Get.find<TaskAndPRojBox>().projList[i].tasks[k]==Get.find<TaskAndPRojBox>().taskList[k].title && Get.find<TaskAndPRojBox>().taskList[k].status == true){
       print("inja");
       maybesucsecc=maybesucsecc-1;
@@ -83,20 +79,7 @@ for (var i = 0; i < Get.find<TaskAndPRojBox>().projList.length; i++) {
     substact=multi/full;
     result=100-substact;
   }
-  
-      // for (var k = 0; k < Get.find<TaskAndPRojBox>().taskList.length; k++) {
-        
-         
-      //   if (Get.find<TaskAndPRojBox>().projList[i].tasks[i] ==
-      //           Get.find<TaskAndPRojBox>().taskList[k].title &&
-      //       Get.find<TaskAndPRojBox>().taskList[k].status == true) {
-              
-      //         Get.find<TaskAndPRojBox>().projList[i].tasks.remove(Get.find<TaskAndPRojBox>().taskList[k].title);
 
-
-             
-      //       }
-      // }
     
   }
 }

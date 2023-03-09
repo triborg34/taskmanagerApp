@@ -68,14 +68,17 @@ class _HomeScreenState extends State<HomeScreen> {
                     SizedBox(
                       height: 10,
                     ),
-                      GetBuilder<TaskAndPRojBox>(builder: (controller){
-                       if(Get.find<TaskAndPRojBox>().taskList.isNotEmpty){
-                        return _MyListTileFunc();
+                     for (var i = 0;
+                        i < Get.find<TaskAndPRojBox>().taskList.length;
+                        i++)   MyListTileWidget(i: i)
+                    //   GetBuilder<TaskAndPRojBox>(builder: (controller){
+                    //    if(Get.find<TaskAndPRojBox>().taskList.isNotEmpty){
+                    //     return SingleChildScrollView(child:_MyListTileFunc() ,);
 
-                       }else{
-                        return Empty('assets/images/empty2.png');
-                       }
-                    }),
+                    //    }else{
+                    //     return Empty('assets/images/empty2.png');
+                    //    }
+                    // }),
 
 
                   
@@ -93,7 +96,5 @@ class _HomeScreenState extends State<HomeScreen> {
 
 
 _MyListTileFunc(){
-    for (var i = 0;
-                        i < Get.find<TaskAndPRojBox>().taskList.length;
-                        i++)  return MyListTileWidget(i: i);
+   
 }
