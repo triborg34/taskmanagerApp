@@ -28,6 +28,8 @@ class Project extends HiveObject {
   @HiveField(7)
   DateTime datetime;
 
+  List completetTasks=[];
+
   Project(
     this.category,
      {
