@@ -71,7 +71,7 @@ if (Get.find<TaskAndPRojBox>().taskList.isNotEmpty){
     resuilt = 100 -
         ((element.tasks.length - element.completetTasks.length) * 100) /
             element.tasks.length;
-    print(resuilt);
+    
     element.progress = resuilt.toInt();
   }}
 }
