@@ -34,6 +34,7 @@ dynamic caculateTasks() {
   if(Get.find<TaskAndPRojBox>().taskList.isNotEmpty){
     for (var k = 0; k < Get.find<TaskAndPRojBox>().projList.length; k++) {
     Get.find<TaskAndPRojBox>().projList[k].tasks.clear();
+    
   }
 
   for (var i = 0; i < Get.find<TaskAndPRojBox>().projList.length; i++) {
@@ -57,33 +58,8 @@ void cacluteprogress() async {
   await  caculateTasks();
 
 
-int full=Get.find<TaskAndPRojBox>().taskList.length;
-int maybesucsecc=Get.find<TaskAndPRojBox>().taskList.length;
-double multi=0.0;
-double substact=0.0;
-double result=0.0;
 
 
-
-
-if(Get.find<TaskAndPRojBox>().taskList.isNotEmpty){
-
-for (var i = 0; i < Get.find<TaskAndPRojBox>().projList.length; i++) {
-  
-  for(int k=0;k<Get.find<TaskAndPRojBox>().taskList.length;k++){  
-    if(Get.find<TaskAndPRojBox>().projList[i].tasks[k]==Get.find<TaskAndPRojBox>().taskList[k].title && Get.find<TaskAndPRojBox>().taskList[k].status == true){
-      print("inja");
-      maybesucsecc=maybesucsecc-1;
-    }
-        multi=maybesucsecc*100;
-    substact=multi/full;
-    result=100-substact;
-  }
-
-    
-  }
-}
-print(result);
   
 
 
