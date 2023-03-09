@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:taskmannager/consts.dart';
+import 'package:taskmannager/controller/controller.dart';
 
 class SearchBar extends StatelessWidget {
-  const SearchBar({
-    Key? key,
-  }) : super(key: key);
+  
 
   @override
   Widget build(BuildContext context) {
     return Stack(children: [
       Container(
+        
         padding: EdgeInsets.all(10),
         decoration: BoxDecoration(
             color: Colors.white,
@@ -23,6 +24,22 @@ class SearchBar extends StatelessWidget {
         width: ScreenSize(context).screenWith,
         child: Center(
           child: TextField(
+            controller: Get.find<FieildControllers>().searchbarController,
+            onSubmitted: (text) {
+              List searchlist=[];
+
+              for(var values in Get.find<TaskAndPRojBox>().projList){
+                if(values.title.toLowerCase().contains(text.toLowerCase())){
+                  searchlist.add(text);
+                }
+              }
+                for(var values in Get.find<TaskAndPRojBox>().taskList){
+                if(values.title.toLowerCase().contains(text.toLowerCase())){
+                  searchlist.add(text);
+                }
+              }
+              
+            },
             cursorColor: Colors.lightGreen,
             cursorHeight: 20,
             expands: false,

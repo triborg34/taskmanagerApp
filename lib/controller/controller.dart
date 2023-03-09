@@ -94,6 +94,9 @@ class FieildControllers extends GetxController {
   //bools
   bool isEditing=false;
 
+  //Searchbar Controller
+  TextEditingController searchbarController=TextEditingController();
+
 }
 
 class TaskAndPRojBox extends GetxController {

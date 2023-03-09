@@ -9,22 +9,9 @@ class RowTexts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        TextButton(
-          onPressed: () {
-            cacluteprogress();
-            
-          },
-          child: Text(
-            "دیدن همه...",
-            textDirection: TextDirection.rtl,
-            style: TextStyle(
-                color: Colors.lightGreen,
-                fontWeight: FontWeight.bold,
-                fontSize: 16),
-          ),
-        ),
+        
         Text(
           name,
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
