@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:taskmannager/consts.dart';
+import 'package:taskmannager/widgets/RowText.dart';
 
 class DetailsScreen extends StatelessWidget {
   bool isProject = true;
@@ -61,9 +62,12 @@ Widget projectDetails() {
       decoration: BoxDecoration(color: Colors.green,borderRadius: BorderRadius.circular(15)),
        child: Row(textDirection: TextDirection.rtl,children: [
         Text(":موضوعات",style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold,color: Colors.white),),
+
         
        ],),
-     )
+     ),SizedBox(height: 15,),
+     RowTexts(name: "کار های مربوطه"),
+     
     ],
   );
 }
