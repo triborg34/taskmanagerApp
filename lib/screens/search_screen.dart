@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 
 import 'package:taskmannager/consts.dart';
 import 'package:taskmannager/controller/controller.dart';
+import 'package:taskmannager/models/projModel.dart';
+import 'package:taskmannager/models/taskModel.dart';
 
 class SearchScreen extends StatelessWidget {
   List showList=[];
@@ -41,6 +43,17 @@ class SearchScreen extends StatelessWidget {
                     color: Colors.green,
                     borderRadius: BorderRadius.circular(10)),
                 child: ListTile(
+                  onTap: (){
+                    List<Project> projectList=[];
+                    List<TaskModel> taskList=[];
+                   if(Get.find<TaskAndPRojBox>().projList.where((element) => element.title.contains(text))==true){
+                    projectList=Get.find<TaskAndPRojBox>().projList.where((element) => element.title.contains(text)).toList();
+                   }else{
+                    taskList=Get.find<TaskAndPRojBox>().taskList.where((element) => element.title.contains(text)).toList();
+                   }
+                   
+                   
+                  },
                   title: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [

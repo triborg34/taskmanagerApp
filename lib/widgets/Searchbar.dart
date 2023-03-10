@@ -31,12 +31,13 @@ class SearchBar extends StatelessWidget {
 
               for(var values in Get.find<TaskAndPRojBox>().projList){
                 if(values.title.toLowerCase().contains(text.toLowerCase())){
-                  searchlist.add(text);
+                  print(values.title.toLowerCase().contains(text.toLowerCase()));
+                  searchlist.add(values.title);
                 }
               }
                 for(var values in Get.find<TaskAndPRojBox>().taskList){
                 if(values.title.toLowerCase().contains(text.toLowerCase())){
-                  searchlist.add(text);
+                  searchlist.add(values.title);
                 }
               }
               Get.to(()=> SearchScreen(showList: searchlist,text: text,));
