@@ -10,8 +10,11 @@ class DetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.green,
           body: Container(
-        margin: EdgeInsets.all(25),
+            decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(25)),
+            padding: EdgeInsets.all(10),
+        margin: EdgeInsets.all(15),
         height: ScreenSize(context).screenHeight,
         width: ScreenSize(context).screenWith,
         child: isProject ? projectDetails() : taskDetails(),
