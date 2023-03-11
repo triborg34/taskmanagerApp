@@ -25,6 +25,7 @@ class _MainViewPageState extends State<MainViewPage> {
     Get.find<TaskAndPRojBox>().getProjData();
     Get.find<TaskAndPRojBox>().getTaskData();
     remindTimes();
+    caculateTasks();
     
     
     return Scaffold(

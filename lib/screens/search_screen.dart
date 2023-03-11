@@ -5,6 +5,7 @@ import 'package:taskmannager/consts.dart';
 import 'package:taskmannager/controller/controller.dart';
 import 'package:taskmannager/models/projModel.dart';
 import 'package:taskmannager/models/taskModel.dart';
+import 'package:taskmannager/screens/detales_screen.dart';
 
 class SearchScreen extends StatelessWidget {
   List showList=[];
@@ -46,9 +47,14 @@ class SearchScreen extends StatelessWidget {
                   onTap: (){
                     List<Project> projectList=[];
                     List<TaskModel> taskList=[];
-                   if(Get.find<TaskAndPRojBox>().projList.where((element) => element.title.contains(text))==true){
+
+                   
+                   if(Get.find<TaskAndPRojBox>().projList.where((element) => element.title.contains(text)).isNotEmpty){
                     projectList=Get.find<TaskAndPRojBox>().projList.where((element) => element.title.contains(text)).toList();
+                    print("inja");
+                    Get.to(()=> DetailsScreen(isProject: true, list: projectList));
                    }else{
+                    
                     taskList=Get.find<TaskAndPRojBox>().taskList.where((element) => element.title.contains(text)).toList();
                    }
                    

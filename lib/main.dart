@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
       getPages: pages,
       defaultTransition: Transition.fadeIn,
       title: "Task Manengment",
-      home: DetailsScreen(),
+      home: DetailsScreen(isProject: false,list: [],),
       // home: FutureBuilder(
       //   future: PrefController.letsynch(),
       //   builder: (context, snapshot) {
