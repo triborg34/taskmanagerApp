@@ -56,6 +56,8 @@ class SearchScreen extends StatelessWidget {
                    }else{
                     
                     taskList=Get.find<TaskAndPRojBox>().taskList.where((element) => element.title.contains(text)).toList();
+
+                    Get.to(()=> DetailsScreen(isProject: false, list: taskList));
                    }
                    
                    

@@ -7,7 +7,7 @@ import 'package:taskmannager/models/projModel.dart';
 import 'package:taskmannager/widgets/RowText.dart';
 
 class DetailsScreen extends StatelessWidget {
-  bool isProject = false;
+  bool isProject;
   List<dynamic> list = [];
   DetailsScreen({required this.isProject, required this.list});
 
@@ -23,7 +23,7 @@ class DetailsScreen extends StatelessWidget {
             margin: EdgeInsets.all(15),
             height: ScreenSize(context).screenHeight,
             width: ScreenSize(context).screenWith,
-            child: isProject ? projectDetails(list) : taskDetails(),
+            child: isProject ? projectDetails(list) : taskDetails(list),
           )),
     );
   }
@@ -32,12 +32,7 @@ class DetailsScreen extends StatelessWidget {
 Widget projectDetails(List<dynamic> projlist) {
   return Column(
     children: [
-      Container(
-        padding: EdgeInsets.all(5),
-        decoration: BoxDecoration(
-            color: Colors.green, borderRadius: BorderRadius.circular(25)),
-        child: CoustomAppbar(list: projlist,),
-      ),
+      CoustomAppbar(list: projlist,),
       Container(
         padding: EdgeInsets.all(15),
         margin: EdgeInsets.symmetric(vertical: 10),
@@ -83,18 +78,7 @@ Widget projectDetails(List<dynamic> projlist) {
               width: 15,
             ),
             for (var values in projlist.first.category)
-              Container(
-                  padding: EdgeInsets.all(5),
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(8)),
-                  child: Text(
-                    values.name,
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ))
+              _categorysProject(values)
           ],
         ),
       ),
@@ -110,35 +94,98 @@ Widget projectDetails(List<dynamic> projlist) {
   );
 }
 
+
+Widget taskDetails(List tasklist) {
+  return Column(
+    children: [
+      CoustomAppbar(list:tasklist),
+       Container(
+        padding: EdgeInsets.all(15),
+        margin: EdgeInsets.symmetric(vertical: 10),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(25), color: Colors.green),
+        child: Text(
+          tasklist.first.subtitle,
+          textAlign: TextAlign.center,
+          textDirection: TextDirection.rtl,
+          style: TextStyle(
+              color: Colors.white, fontSize: 18, fontWeight: FontWeight.w900),
+        ),
+      ),
+      Wrap(alignment: WrapAlignment.spaceBetween,
+      direction: Axis.horizontal,
+
+      
+
+      textDirection: TextDirection.rtl,
+      spacing: 5,
+        children: [
+        TimeContainter(text: "تاریخ:${tasklist.first.time}"),
+        TimeContainter(text: "پروژه مربوطه:${tasklist.first.projectRelate}"),
+        TimeContainter(text: tasklist.first.status ? 'تکمیل شده' : "تکمیل نشده")
+
+
+      ],)
+
+      
+    ],
+  );
+}
+
+
+
+
+Container _categorysProject(values) {
+  return Container(
+                padding: EdgeInsets.all(5),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(8)),
+                child: Text(
+                  values.name,
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ));
+}
+
+// ignore: must_be_immutable
 class CoustomAppbar extends StatelessWidget {
   List list=[];
   CoustomAppbar({required this.list});
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        CircleAvatar(
-            backgroundColor: Colors.white,
-            child: IconButton(
-              icon: Icon(Icons.keyboard_arrow_left_outlined),
-              onPressed: () {
-                Get.back();
-              },
-            )),
-        Text(
-          list.first.title.toUpperCase(),
-          style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: Colors.white),
-          textDirection: TextDirection.rtl,
-        ),
-        SizedBox(
-          width: 25,
-        )
-      ],
+    return Container(
+       padding: EdgeInsets.all(5),
+        decoration: BoxDecoration(
+            color: Colors.green, borderRadius: BorderRadius.circular(25)),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          CircleAvatar(
+              backgroundColor: Colors.white,
+              child: IconButton(
+                icon: Icon(Icons.keyboard_arrow_left_outlined),
+                onPressed: () {
+                  Get.back();
+                },
+              )),
+          Text(
+            
+            list.first.title.toUpperCase(),
+            style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Colors.white),
+            textDirection: TextDirection.rtl,
+          ),
+          SizedBox(
+            width: 25,
+          )
+        ],
+      ),
     );
   }
 }
@@ -181,6 +228,3 @@ class TimeContainter extends StatelessWidget {
   }
 }
 
-Widget taskDetails() {
-  return Container();
-}
