@@ -55,7 +55,7 @@ class MyApp extends StatelessWidget {
           if (snapshot.data == false) {
             return OnBoardingScreen();
           } else {
-            return HomeScreen();
+            return MainViewPage();
           }
         },
       ));
