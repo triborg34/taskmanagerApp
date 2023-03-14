@@ -12,7 +12,7 @@ class HelloTextWidget extends StatelessWidget {
     return Column(
       children: [
         Text(
-          " سلام ، عارف",
+          " سلام ، مهتاب",
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
         ),
         Text(

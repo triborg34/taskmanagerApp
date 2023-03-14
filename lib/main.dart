@@ -8,6 +8,7 @@ import 'package:taskmannager/models/projModel.dart';
 import 'package:taskmannager/models/taskModel.dart';
 import 'package:taskmannager/screens/MainViewPage.dart';
 import 'package:taskmannager/screens/detales_screen.dart';
+import 'package:taskmannager/screens/home_screen.dart';
 import 'package:taskmannager/screens/onboarding.dart';
 import 'package:taskmannager/utils/maths.dart';
 import 'package:taskmannager/utils/pages.dart';
@@ -47,17 +48,17 @@ class MyApp extends StatelessWidget {
       getPages: pages,
       defaultTransition: Transition.fadeIn,
       title: "Task Manengment",
-      home: MainViewPage(key: key,),
-      // home: FutureBuilder(
-      //   future: PrefController.letsynch(),
-      //   builder: (context, snapshot) {
-      //     if (snapshot.data == false) {
-      //       return OnBoardingScreen();
-      //     } else {
-      //       return HomeScreen();
-      //     }
-      //   },
-      // ));
-    );
+      // home: MainViewPage(key: key,),
+      home: FutureBuilder(
+        future: PrefController.letsynch(),
+        builder: (context, snapshot) {
+          if (snapshot.data == false) {
+            return OnBoardingScreen();
+          } else {
+            return HomeScreen();
+          }
+        },
+      ));
+    
   }
 }
