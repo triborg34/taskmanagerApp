@@ -22,7 +22,7 @@ class MyListTileWidget extends StatelessWidget {
         Container(
           margin: EdgeInsets.symmetric(vertical: 10),
           width: ScreenSize(context).screenWith,
-          height: 100,
+          height: 150,
           decoration: BoxDecoration(
               color: colors[0], borderRadius: BorderRadius.circular(15)),
         ),
@@ -69,9 +69,9 @@ class MyListTileWidget extends StatelessWidget {
                                       status: Get.find<TaskAndPRojBox>()
                                           .taskList[i]
                                           .status));
-                                          cacluteprogress();
-                                          Get.find<TaskAndPRojBox>().update([5]);
-                                          Navigator.pop(context);
+                              cacluteprogress();
+                              Get.find<TaskAndPRojBox>().update([5]);
+                              Navigator.pop(context);
                             },
                           ),
                           Divider(
@@ -82,22 +82,22 @@ class MyListTileWidget extends StatelessWidget {
                             text: "ویرایش",
                             iconData: Icons.edit,
                             onpress: () {
-                              Get.find<FieildControllers>().currentindex=i;
-                              Get.find<FieildControllers>().isEditing=true;
-                              Get.find<FieildControllers>().taskFieldController.text=Get.find<TaskAndPRojBox>().taskList[i].title;
-                              Get.find<FieildControllers>().noteFieldController.text=Get.find<TaskAndPRojBox>().taskList[i].subtitle;
-                              Get.find<TaskController>().defuiltTime=Get.find<TaskAndPRojBox>().taskList[i].time;
-                              
+                              Get.find<FieildControllers>().currentindex = i;
+                              Get.find<FieildControllers>().isEditing = true;
+                              Get.find<FieildControllers>()
+                                      .taskFieldController
+                                      .text =
+                                  Get.find<TaskAndPRojBox>().taskList[i].title;
+                              Get.find<FieildControllers>()
+                                      .noteFieldController
+                                      .text =
+                                  Get.find<TaskAndPRojBox>()
+                                      .taskList[i]
+                                      .subtitle;
+                              Get.find<TaskController>().defuiltTime =
+                                  Get.find<TaskAndPRojBox>().taskList[i].time;
+
                               Get.to(NewTask());
-
-
-
-
-
-
-
-
-
                             },
                           ),
                           Divider(
@@ -125,23 +125,36 @@ class MyListTileWidget extends StatelessWidget {
               padding: EdgeInsets.all(10),
               margin: EdgeInsets.symmetric(vertical: 10),
               width: ScreenSize(context).screenWith,
-              height: 100,
+              height: 155,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          Get.find<TaskAndPRojBox>().taskList[i].title,
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold),
+                        Container(
+                          width: 200,
+                          child: Text(
+                            Get.find<TaskAndPRojBox>().taskList[i].title,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 22,
+                                fontWeight: FontWeight.bold),
+                          ),
                         ),
                         SizedBox(
-                          height: 5,
+                          height: 3,
                         ),
+                        Container(
+                            width: 200,
+                            child: Text(
+                              Get.find<TaskAndPRojBox>().taskList[i].subtitle,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                  fontSize: 20, color: Colors.grey.shade700),
+                            )),
+                            SizedBox(height: 3,),
                         Container(
                           width: 100,
                           height: 25,
@@ -161,11 +174,11 @@ class MyListTileWidget extends StatelessWidget {
                               borderRadius: BorderRadius.circular(5)),
                         ),
                         SizedBox(
-                          height: 5,
+                          height: 3,
                         ),
                         Text(
                           Get.find<TaskAndPRojBox>().taskList[i].time,
-                          style: TextStyle(color: Colors.grey),
+                          style: TextStyle(color: Colors.grey, fontSize: 20),
                         )
                       ]),
                   CircularPercentIndicator(

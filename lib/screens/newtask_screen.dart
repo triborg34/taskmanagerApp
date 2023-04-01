@@ -144,7 +144,7 @@ class TitleWidget extends StatelessWidget {
         textDirection: TextDirection.rtl,
         style: TextStyle(
           color: Colors.grey[600],
-          fontSize: 16,
+          fontSize: 18,
         ),
       ),
     );
@@ -168,7 +168,7 @@ class MyCoustomAppbar extends StatelessWidget {
           child: Text(
             Get.find<FieildControllers>().isEditing ? "ویرایش کار" : "کار جدید",
             style: TextStyle(
-                fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold),
+                fontSize: 24, color: Colors.white, fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),
         )),
