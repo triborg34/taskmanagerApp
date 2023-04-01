@@ -7,8 +7,6 @@ import 'package:taskmannager/models/catogeryModel.dart';
 import 'package:taskmannager/models/projModel.dart';
 import 'package:taskmannager/models/taskModel.dart';
 import 'package:taskmannager/screens/MainViewPage.dart';
-import 'package:taskmannager/screens/detales_screen.dart';
-import 'package:taskmannager/screens/home_screen.dart';
 import 'package:taskmannager/screens/onboarding.dart';
 import 'package:taskmannager/utils/maths.dart';
 import 'package:taskmannager/utils/pages.dart';
@@ -35,12 +33,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      theme: ThemeData(fontFamily: 'nazanin'),
       onInit: () async {
         Get.find<TaskAndPRojBox>().getTaskData();
         Get.find<TaskAndPRojBox>().getCatData();
         Get.find<TaskAndPRojBox>().getProjData();
         remindTimes();
         cacluteprogress();
+        
         
       },
       debugShowCheckedModeBanner: false,

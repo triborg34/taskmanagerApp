@@ -45,8 +45,8 @@ List<OnbordingData> OnBardingList = [
                 fontSize: 18,
                 fontWeight: FontWeight.bold)),
       ),
-      descText: Text(""))
-];
+      descText: Text("")
+)];
 
 List<Color> colors = [
   Colors.green,

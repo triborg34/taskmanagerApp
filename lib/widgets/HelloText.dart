@@ -12,9 +12,9 @@ class HelloTextWidget extends StatelessWidget {
     return Column(
       children: [
         Text(
-          " سلام ، مهتاب",
+          " سلام ",
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-        ),
+        ),SizedBox(height: 5,),
         Text(
           "${Get.find<TaskAndPRojBox>().taskList.length} کار مانده...",
           textDirection: TextDirection.rtl,
