@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:taskmannager/controller/controller.dart';
 import 'package:taskmannager/screens/newtask_screen.dart';
+import 'package:taskmannager/utils/newfuncs.dart';
 
 class CalanderView extends StatefulWidget {
   const CalanderView({super.key});
@@ -65,7 +66,7 @@ class _CalanderViewState extends State<CalanderView> {
                           selectedDay.day.toString();
                       Get.find<TimeAndDateController>().currentDateTime =
                           selectedDay;
-
+                    newproj();
                       Get.toNamed('/newproj');
                     },
                     title: Row(
@@ -79,6 +80,8 @@ class _CalanderViewState extends State<CalanderView> {
                       onTap: (() {
                         Get.find<TaskController>().defuiltTime =
                             "${selectedDay.year}/${selectedDay.month}/${selectedDay.day}";
+
+                            newtask();
                         Get.toNamed('/newtask');
                       }),
                       title: Row(

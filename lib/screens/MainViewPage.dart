@@ -9,6 +9,7 @@ import 'package:taskmannager/screens/home_screen.dart';
 import 'package:taskmannager/screens/newProje_screen.dart';
 import 'package:taskmannager/screens/setting_screen.dart';
 import 'package:taskmannager/utils/maths.dart';
+import 'package:taskmannager/utils/newfuncs.dart';
 import 'package:taskmannager/widgets/floatingactionbutton.dart';
 
 class MainViewPage extends StatefulWidget {
@@ -53,23 +54,14 @@ class _MainViewPageState extends State<MainViewPage> {
                 animatedIconData: AnimatedIcons.menu_close,
                 fabButtons: [
                   fab(() {
-                    Get.find<TimeAndDateController>().displayDay= DateTime.now().day.toString();
-                    Get.find<FieildControllers>().titleController.text='';
-                    Get.find<FieildControllers>().despController.text='';
-                    Get.find<TaskController>().defuiltTime="تاریخ";
-                    Get.find<FieildControllers>().isEditing=false;
-                    Get.find<TimeAndDateController>().currentDateTime=DateTime.now();
+                   newproj();
 
 
 
                     Get.toNamed('/newproj');
                   }, "پروژه", "btn1", Icons.add_to_queue),
                   fab(() {
-                    Get.find<FieildControllers>().isEditing=false;
-                    Get.find<FieildControllers>().taskFieldController.text='';
-                    Get.find<FieildControllers>().noteFieldController.text='';
-                    Get.find<TaskController>().defuiltTime="تاریخ";
-                    Get.find<TaskController>().displayvalue=Get.find<TaskController>().items[0];
+                    newtask();
                     Get.toNamed('/newtask');
                   }, "کار", "btn2", Icons.add_task)
                 ],
