@@ -188,6 +188,7 @@ class _NewProjectScreenState extends State<NewProjectScreen> {
       .toList() ,
                 initialValue: Get.find<FieildControllers>().isEditing ? Get.find<TaskAndPRojBox>().projList[Get.find<FieildControllers>().currentindex].category : [],
                 key: _multiSelectKey,
+                
                 selectedChipColor: Colors.blue.withOpacity(0.5),
                 selectedTextStyle: TextStyle(
                     color: Colors.white,

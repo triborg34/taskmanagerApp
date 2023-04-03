@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:taskmannager/controller/controller.dart';
+import 'package:taskmannager/screens/categorys_screen.dart';
 import 'package:taskmannager/screens/home_screen.dart';
 
 import 'package:taskmannager/widgets/settingRows.dart';
@@ -88,6 +89,9 @@ class SettingScreen extends StatelessWidget {
                             Navigator.pop(context);
                           });
                          
+                        }),SizedBox(height: 15,),
+                        MySettingRows(title: "مدیریت موضوعات", iconData: Icons.category, onpress: (){
+                          Get.to(()=>CategoryeScreen() );
                         }),
                     SizedBox(height: 15),
                     MySettingRows(
