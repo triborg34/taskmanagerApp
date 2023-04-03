@@ -21,6 +21,7 @@ class MyTextField extends StatelessWidget {
           fontSize: 18, fontWeight: FontWeight.bold, color: Colors.grey),
       textDirection: TextDirection.rtl,
       decoration: InputDecoration(
+        
           label: Align(
         alignment: Alignment.topRight,
         child: Text(

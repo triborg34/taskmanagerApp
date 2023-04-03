@@ -1,6 +1,9 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:taskmannager/controller/controller.dart';
+import 'package:taskmannager/screens/home_screen.dart';
 
 import 'package:taskmannager/widgets/settingRows.dart';
 
@@ -37,7 +40,27 @@ class SettingScreen extends StatelessWidget {
                     MySettingRows(
                       title: "پاک کردن پروژه ها",
                       iconData: Icons.delete_sweep,
-                      onpress: () {},
+                      onpress: () {
+                        showDialog(
+                          context: context,
+                          builder: (context) {
+                            return Center(
+                                child: CircularProgressIndicator(
+                              color: Colors.green,
+                              strokeWidth: 6.0,
+                            ));
+                          },
+                        );
+                        Future.delayed(Duration(seconds: 2))
+                            .then((value) {
+                                 Get.find<TaskAndPRojBox>().projbox.clear();
+                                 Get.find<TaskAndPRojBox>().projList.clear();
+                        Get.find<TaskAndPRojBox>().getProjData();
+
+                              Navigator.pop(context);
+                            });
+                       
+                      },
                     ),
                     SizedBox(
                       height: 15,
@@ -45,7 +68,27 @@ class SettingScreen extends StatelessWidget {
                     MySettingRows(
                         title: "پاک کردن کارها",
                         iconData: Icons.delete,
-                        onpress: () {}),
+                        onpress: () {
+                          showDialog(
+                            context: context,
+                            builder: (context) {
+                              return Center(
+                                  child: CircularProgressIndicator(
+                                color: Colors.green,
+                                strokeWidth: 6.0,
+                              ));
+                            },
+                          );
+                          Future.delayed(Duration(seconds: 2)).then((value) {
+                            Get.find<TaskAndPRojBox>().hivebox.clear();
+                            Get.find<TaskAndPRojBox>().taskList.clear();
+
+                            Get.find<TaskAndPRojBox>().getTaskData();
+                            
+                            Navigator.pop(context);
+                          });
+                         
+                        }),
                     SizedBox(height: 15),
                     MySettingRows(
                         title: "بستن برنامه",
