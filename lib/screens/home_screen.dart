@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:taskmannager/consts.dart';
 import 'package:taskmannager/controller/controller.dart';
+import 'package:taskmannager/utils/newfuncs.dart';
 import 'package:taskmannager/widgets/HelloText.dart';
 import 'package:taskmannager/widgets/ListView.dart';
 import 'package:taskmannager/widgets/MyListTilew.dart';
@@ -36,8 +37,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           CircleAvatar(
-                            backgroundColor: Colors.lightGreen,
-                            radius: 25,
+                            child: Image.asset(getAvtar()),
+                            backgroundColor: Colors.transparent,
+                            radius: 35,
                           ),
                           Spacer(),
                           HelloTextWidget(),

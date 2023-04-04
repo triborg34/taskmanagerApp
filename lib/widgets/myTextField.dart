@@ -51,6 +51,7 @@ class _RightTextRowState extends State<RightTextRow> {
       children: [
         TextButton(
           onPressed: () {
+            Get.find<FieildControllers>().categoryFieldController.text='';
             Get.defaultDialog(
                 title: 'موضوع',
                 content: Column(
