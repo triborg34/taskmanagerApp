@@ -3,21 +3,25 @@ import 'dart:math';
 import 'package:get/get.dart';
 import 'package:taskmannager/controller/controller.dart';
 
-void newproj() {
-  Get.find<TimeAndDateController>().displayDay = DateTime.now().day.toString();
+void newproj(String displayDay,DateTime dateTime) {
+  Get.find<TimeAndDateController>().displayDay = displayDay;
   Get.find<FieildControllers>().titleController.text = '';
   Get.find<FieildControllers>().despController.text = '';
   Get.find<TaskController>().defuiltTime = "تاریخ";
   Get.find<FieildControllers>().isEditing = false;
-  Get.find<TimeAndDateController>().currentDateTime = DateTime.now();
+  Get.find<TimeAndDateController>().currentDateTime = dateTime;
+// Get.find<TimeAndDateController>().currentDateTime = DateTime.now();
+  // Get.find<TimeAndDateController>().displayDay = DateTime.now().day.toString();
 }
 
-void newtask() {
+void newtask(String defuiltTime) {
   Get.find<FieildControllers>().isEditing = false;
   Get.find<FieildControllers>().taskFieldController.text = '';
   Get.find<FieildControllers>().noteFieldController.text = '';
-  Get.find<TaskController>().defuiltTime = "تاریخ";
+  Get.find<TaskController>().defuiltTime = defuiltTime;
   Get.find<TaskController>().displayvalue = Get.find<TaskController>().items[0];
+
+  // Get.find<TaskController>().defuiltTime = "تاریخ";
 }
 
 String getAvtar() {

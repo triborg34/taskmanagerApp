@@ -55,14 +55,14 @@ class _MainViewPageState extends State<MainViewPage> {
                 animatedIconData: AnimatedIcons.menu_close,
                 fabButtons: [
                   fab(() {
-                   newproj();
+                   newproj(DateTime.now().day.toString(),DateTime.now());
 
 
 
                     Get.toNamed('/newproj');
                   }, "پروژه", "btn1", Icons.add_to_queue),
                   fab(() {
-                    newtask();
+                    newtask('تاریخ');
                     Get.toNamed('/newtask');
                   }, "کار", "btn2", Icons.add_task)
                 ],

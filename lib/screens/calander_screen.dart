@@ -66,7 +66,7 @@ class _CalanderViewState extends State<CalanderView> {
                           selectedDay.day.toString();
                       Get.find<TimeAndDateController>().currentDateTime =
                           selectedDay;
-                    newproj();
+                    newproj(selectedDay.day.toString(),selectedDay);
                       Get.toNamed('/newproj');
                     },
                     title: Row(
@@ -78,10 +78,12 @@ class _CalanderViewState extends State<CalanderView> {
                   ),
                   ListTile(
                       onTap: (() {
-                        Get.find<TaskController>().defuiltTime =
-                            "${selectedDay.year}/${selectedDay.month}/${selectedDay.day}";
+                        // Get.find<TaskController>().defuiltTime =
+                        //     "${selectedDay.year}/${selectedDay.month}/${selectedDay.day}";
 
-                            newtask();
+                               String defuiltTime =
+                            "${selectedDay.year}/${selectedDay.month}/${selectedDay.day}";
+                            newtask(defuiltTime);
                         Get.toNamed('/newtask');
                       }),
                       title: Row(
