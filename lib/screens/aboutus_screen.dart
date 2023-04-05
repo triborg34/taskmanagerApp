@@ -27,6 +27,20 @@ class AboutMe extends StatelessWidget {
                               color: Colors.white,
                               fontSize: 18,
                               fontWeight: FontWeight.bold),
+                        )),Spacer(),
+                        Container(
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                            color: Colors.green,
+                            borderRadius: BorderRadius.circular(15)),
+                        child: Text(
+                          "Version : 1.0.0 \n Made By ♥ Aref Mousavi",
+                          textDirection: TextDirection.rtl,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold),
                         ))
                   ],
                 ))),
