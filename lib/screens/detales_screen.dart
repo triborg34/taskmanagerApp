@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:taskmannager/consts.dart';
-import 'package:taskmannager/controller/controller.dart';
-import 'package:taskmannager/models/projModel.dart';
 import 'package:taskmannager/widgets/RowText.dart';
 
+// ignore: must_be_immutable
 class DetailsScreen extends StatelessWidget {
   bool isProject;
   List<dynamic> list = [];

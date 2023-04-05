@@ -7,6 +7,7 @@ import 'package:taskmannager/models/projModel.dart';
 import 'package:taskmannager/models/taskModel.dart';
 import 'package:taskmannager/screens/detales_screen.dart';
 
+// ignore: must_be_immutable
 class SearchScreen extends StatelessWidget {
   List showList=[];
   String text;

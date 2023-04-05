@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:taskmannager/utils/maths.dart';
 
 // ignore: must_be_immutable
 class RowTexts extends StatelessWidget {

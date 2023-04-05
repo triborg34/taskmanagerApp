@@ -6,7 +6,6 @@ import 'package:taskmannager/controller/controller.dart';
 import 'package:taskmannager/screens/aboutus_screen.dart';
 import 'package:taskmannager/screens/calander_screen.dart';
 import 'package:taskmannager/screens/home_screen.dart';
-import 'package:taskmannager/screens/newProje_screen.dart';
 import 'package:taskmannager/screens/setting_screen.dart';
 import 'package:taskmannager/utils/maths.dart';
 import 'package:taskmannager/utils/newfuncs.dart';

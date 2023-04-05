@@ -203,6 +203,7 @@ class MyListTileWidget extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable
 class DialogButtons extends StatelessWidget {
   IconData iconData;
   String text;

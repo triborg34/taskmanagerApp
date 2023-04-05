@@ -7,13 +7,10 @@ import 'package:taskmannager/consts.dart';
 import 'package:taskmannager/controller/controller.dart';
 import 'package:taskmannager/models/catogeryModel.dart';
 import 'package:taskmannager/models/projModel.dart';
-import 'package:taskmannager/models/taskModel.dart';
 import 'package:taskmannager/screens/MainViewPage.dart';
 import 'package:taskmannager/utils/date_timeUtil.dart' as date_util;
-import 'package:taskmannager/utils/onboardinglist.dart';
 
 import 'package:taskmannager/widgets/datepicker.dart';
-import 'package:taskmannager/widgets/myArrows.dart';
 import 'package:taskmannager/widgets/myTextField.dart';
 
 class NewProjectScreen extends StatefulWidget {

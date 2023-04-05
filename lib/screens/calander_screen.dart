@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:taskmannager/controller/controller.dart';
-import 'package:taskmannager/screens/newtask_screen.dart';
 import 'package:taskmannager/utils/newfuncs.dart';
 
 class CalanderView extends StatefulWidget {

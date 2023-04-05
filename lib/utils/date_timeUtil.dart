@@ -48,6 +48,7 @@ class DateUtils {
   static List<DateTime> daysInMonth(DateTime month) {
     var first = firstDayOfMonth(month);
     var daysBefore = first.weekday;
+    // ignore: unused_local_variable
     var firstToDisplay = first.subtract(Duration(days: daysBefore));
     var last = DateUtils.lastDayOfMonth(month);
 
