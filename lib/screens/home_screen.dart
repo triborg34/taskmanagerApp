@@ -60,7 +60,14 @@ class _HomeScreenState extends State<HomeScreen> {
                         if (Get.find<TaskAndPRojBox>().projList.isNotEmpty) {
                           return MyCardWidget();
                         } else {
-                          return Empty('assets/images/empty1.png');
+                          return GestureDetector(
+                              onTap: () {
+                                newproj(DateTime.now().day.toString(),
+                                    DateTime.now());
+
+                                Get.toNamed('/newproj');
+                              },
+                              child: Empty('assets/images/empty1.png'));
                         }
                       }),
                       SizedBox(
@@ -70,15 +77,18 @@ class _HomeScreenState extends State<HomeScreen> {
                       SizedBox(
                         height: 10,
                       ),
-
                       if (Get.find<TaskAndPRojBox>().taskList.isNotEmpty)
                         for (var i = 0;
                             i < Get.find<TaskAndPRojBox>().taskList.length;
                             i++)
                           MyListTileWidget(i: i)
-                      else Empty('assets/images/empty2.png')
-
-               
+                      else
+                        GestureDetector(
+                            onTap: () {
+                              newtask('تاریخ');
+                              Get.toNamed('/newtask');
+                            },
+                            child: Empty('assets/images/empty2.png'))
                     ],
                   );
                 },
@@ -89,4 +99,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
