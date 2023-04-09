@@ -72,8 +72,8 @@ class FieildControllers extends GetxController {
   //task Controller
   TextEditingController taskFieldController = TextEditingController();
   TextEditingController noteFieldController = TextEditingController();
-  late String dateController;
-  late String relatedProject;
+   String dateController='';
+   String relatedProject='بدون پروژه';
   bool status = false;
 
   //Cat Controllers
