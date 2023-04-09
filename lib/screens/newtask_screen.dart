@@ -55,10 +55,10 @@ class Mybutton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: () {
           TaskModel taskModel = TaskModel(
-              projectRelate: Get.find<FieildControllers>().relatedProject!,
+              projectRelate: Get.find<FieildControllers>().relatedProject,
               title: Get.find<FieildControllers>().taskFieldController.text,
               subtitle: Get.find<FieildControllers>().noteFieldController.text,
-              time: Get.find<FieildControllers>().dateController!,
+              time: Get.find<FieildControllers>().dateController,
               status: Get.find<FieildControllers>().status);
 
 
