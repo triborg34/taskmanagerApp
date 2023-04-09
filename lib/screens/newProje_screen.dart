@@ -356,7 +356,7 @@ class TitleAndBackWidget extends StatelessWidget {
           ),
         ),
         Text(
-          Get.find<FieildControllers>().isEditing ? "ویرایش" : "افزوردن",
+          Get.find<FieildControllers>().isEditing ? "ویرایش" : "افزودن",
           style: TextStyle(
               fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
         ),
