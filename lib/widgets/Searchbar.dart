@@ -4,7 +4,7 @@ import 'package:taskmannager/consts.dart';
 import 'package:taskmannager/controller/controller.dart';
 import 'package:taskmannager/screens/search_screen.dart';
 
-class SearchBar extends StatelessWidget {
+class SearchBar2 extends StatelessWidget {
   
 
   @override

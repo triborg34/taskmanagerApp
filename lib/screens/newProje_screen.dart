@@ -38,7 +38,7 @@ class _NewProjectScreenState extends State<NewProjectScreen> {
   Widget TopView(BuildContext context) {
     return Container(
       padding: EdgeInsets.fromLTRB(15, 60, 15, 0),
-      height: ScreenSize(context).screenHeight * 0.35,
+      height: ScreenSize(context).screenHeight * 0.37,
       color: Colors.green,
       child: Column(
         children: [
